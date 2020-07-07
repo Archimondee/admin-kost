@@ -10,10 +10,14 @@ import AddKostScreen from './src/screen/Kost/AddKostScreen';
 import EditKostScreen from './src/screen/Kost/EditKostScreen';
 import DetailKostScreen from './src/screen/Kost/DetailKostScreen';
 
+import UserScreen from './src/screen/User/UserScreen';
+import AddUserScreen from './src/screen/User/AddUserScreen';
+
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const App = () => {
   YellowBox.ignoreWarnings(['']);
+
   const KostStack = () => {
     return (
       <Stack.Navigator headerMode={'none'} initialRouteName="KostScreen">
@@ -25,6 +29,15 @@ const App = () => {
     );
   };
 
+  const UserStack = () => {
+    return (
+      <Stack.Navigator headerMode={'none'} initialRouteName="UserScreen">
+        <Stack.Screen name="UserScreen" component={UserScreen} />
+        <Stack.Screen name="AddUser" component={AddUserScreen} />
+      </Stack.Navigator>
+    );
+  };
+
   return (
     <>
       <SafeAreaProvider>
@@ -32,6 +45,7 @@ const App = () => {
           <Drawer.Navigator initialRouteName="Home">
             <Drawer.Screen name="Home" component={HomeScreen} />
             <Drawer.Screen name="Kost" component={KostStack} />
+            <Drawer.Screen name="User" component={UserStack} />
           </Drawer.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>
