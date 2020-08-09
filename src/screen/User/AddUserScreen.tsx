@@ -33,7 +33,7 @@ const AddUserScreen = (props: AddUserProps) => {
   const [foto, setFoto] = useState(FotoDefault.person);
   const [btnLaki, setBtnLaki] = useState(true);
   const [btnPerempuan, setBtnPerempuan] = useState(false);
-  const [jenkel, setJenkel] = useState('');
+  const [jenkel, setJenkel] = useState('Laki-Laki');
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
